@@ -32,6 +32,8 @@
 	<p> Press the button to create an new element of type div and then add it to the container.
 		</p>
 		<button onclick="makeNewDiv()">Add end</button>
+		<button onclick="addFront()">Add front</button>
+		<button onclick="remove()">Remove</button>
 	
 	
 </body>
@@ -46,12 +48,35 @@
 
 		/* add it to the container */
 		let container = document.getElementById('target')
-		container.insertBefore(element, container.firstChild)
 		container.appendChild(element)
+
+		//extra commands from the preset----
+		//container.insertBefore(element, container.firstChild)
+		
 		//let items = document.getElementsByClassName('queue')
 		//let last = items.length - 1
 		//console.log("last is " + last)
 		//items[last].remove()
+	}
+	function remove(){
+		let divListItems = document.getElementsByClassName('divlist')
+		let length = divListItems.length
+		if (length > 0) {
+			let middleIndex = Math.floor(length / 2)
+			divListItems[middleIndex].remove()
+		}
+	}
+	function addFront(){
+		let inputValue =document.getElementById('textInput').value
+		/* make the div and its text */
+		let element = document.createElement("div")
+		element.innerHTML = inputValue
+		element.style.color = "orange"
+		element.className = "queue"
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.insertBefore(element, container.firstChild)
 	}
 </script>
 </html>	
