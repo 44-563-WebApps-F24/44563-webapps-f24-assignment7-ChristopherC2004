@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Speed game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <h2>Christopher Carter speed check</h2>
+  <p id="target">I will become red </p>
+
+  <div id="target">Your time: <span id="timeDisplay">0</span></div>
+  <div id="counter">Count: <span id="counterDisplay">0</span></div>
+
+  <button id="startTimer" class="btn btn-success">Start Timer</button>
+  <button id="stopTimer" class="btn btn-danger" onclick="recordTime()">Stop Timer</button>
+  
+  <script> 
+  let stopTime = undefined;
+
+  function recordTime() {
+    stopTime = Date.now();
+    console.log("Stop time: " + stopTime);
+    }
+  </script>
+
+</body>
+</html>
